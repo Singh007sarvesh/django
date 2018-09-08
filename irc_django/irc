@@ -1,0 +1,158 @@
+1 Listing Channel
+
+REQUEST:
+
+HTTP GET /api/channels
+
+RESPONSE:OUTPUT
+{
+    "channel": [
+        {
+            "name":"General"
+        },
+        "has_more": true
+    ]   
+}
+
+2 Create Channel
+
+REQUEST:
+
+HTTP POST /api/channels
+INPUT
+{
+    "name":"General"
+}
+OUTPUT
+{
+    "message": "Channel is created.."
+}
+
+3 LISTING MESSAGE FOR Channel
+
+REQUEST:
+
+HTTP GET /api/channels/<id>/messages/<id>
+
+RESPONSE:OUTPUT
+{
+    "message":[
+    {
+        "id": 1
+        "text": "this is my first msg",
+        "created_at": "2018-02-01",
+        "username": "amit"
+        "channel": "general"
+    },
+    "has_more": true
+    ]
+}
+
+4 Create Message for channel
+
+REQUEST:
+HTTP POST /api/channels/<id>/messages
+
+INPUT
+{
+    "created_at": "2018-02-01",
+    "username" : "amit",
+    "text": "This is my first msg",
+    "channel_id": 1 
+}
+OUTPUT
+{
+    "message": "Message created.."
+}
+
+5 Create User
+
+REQUEST
+
+HTTP POST /api/users
+
+INPUT
+{
+    "username": "amit"
+    "password": "123"
+    "confirmation password": "123"
+}
+OUTPUT
+{
+    "message": "successfully created"
+}
+
+6 Delete Message
+
+REQUEST
+
+HTTP DELETE /api/channels/<id>/messages/<id>
+OUPUT
+{
+    "message": "deleted"
+}
+
+7 Update Channel
+
+HTTP PUT /api/channels/<id>
+
+INPUT
+{
+    "name": "amit"
+}
+OUTPUT
+{
+    "message": "updated"
+}
+
+8 Delete Channel
+
+REQUEST
+
+HTTP DELETE /api/channels/<id>
+
+OUTPUT
+{
+    "message": "deleted"
+}
+
+9  Delete User
+
+REQUEST:
+    HTTP DELETE /api/users/<id>
+    OUTPUT:
+    {
+        "Message": "deleted"
+    }
+
+10 Update User
+
+REQUEST:
+
+    HTTP PUT /api/users/<id>
+    INPUT
+    {
+        "id": 1
+        "username": "amit",
+        "email address": "a@gmail.com",
+        "password": "123"
+    }
+    OUTPUT: 
+    {
+        "message": "updated"
+    }
+
+11 Update message
+
+REQUEST
+
+HTTP DELETE /api/channels/<id>/messages/<id>
+INPUT{
+    "id": 3
+    "message": "hello"
+    
+}
+OUPUT
+{
+    "message": "deleted"
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SignUp Form</title>
+</head>
+<body>
+{% block content %}
+  <h2 style="margin-left:37%;margin-top:7%;">Sign up</h2>
+  <form method="post" style="margin-left:37%;margin-top:3%;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
+
+<a href="/login_users">login</a>
+</body>
+</html>

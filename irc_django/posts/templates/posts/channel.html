@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Channel</title>
+    </head>
+    <body>
+        <div >
+            <div>
+                <div style="background-color:#008B8B;width:auto;height:50px;"><p style="text-align:center;color:white;position:absolute;left:45%;top:10px;">Welcome
+                    <form method="POST" action="/logout/">
+                        {% csrf_token %}
+                        <input style="margin-left:75%;margin-top:1%;" type="submit" name="create_channel" value="logout">
+                    </form>
+                </p></div>
+                <div style="height:auto;width:15%;margin-top:-.005%;background-color:#581845;">
+                    
+                     {% for ch in channels %}
+                       <a href="/messages/{{ch.id}}" style="color:white;margin-left:5%;"> {{ch.name}}</a><br><br>
+                    {% endfor %}
+                </div>
+                <div style="margin-left:15%;height:auto;width:auto;margin-top:0%">
+                    {% for msg in messages %}
+                    <p style="margin-left:3%">{{msg.creator}} : {{msg.message}}</p>
+                    {% endfor %}
+                </div>
+                <div style="margin-left:15%;height:auto;width:auto;margin-top:5%">
+                    
+                    <form method="POST" action="/message/{{channels_id}}/">
+                        {% csrf_token %}
+                        <input type="text" style="width:100%; height:4%;" name="post_message"
+                        id="Text1" placeholder="Enter Message Here.." />
+                        <input type="submit" name="submit" value="POST">
+                    </form>
+                   
+                </div>
+            </div>
+        </div>        
+        <form method="POST" action="">
+            
+        </form>
+        
+    </body>
+</html>

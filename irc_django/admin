@@ -1,0 +1,95 @@
+For Administrator:
+
+For applicants
+OUTPUT
+{
+    "users": [
+                {},
+        "has_more": true
+    ]   
+}
+
+For Recruiters
+
+OUTPUT
+{
+    "users": [
+        {},
+        "has_more": true
+    ]   
+}
+
+For Representative
+{
+    "users": [
+        {},
+        "has_more": true
+    ]   
+}
+
+For list of job
+
+{
+    "jobs": [
+        {
+            "name":"xyz"
+        },
+        "has_more": true
+    ]   
+}
+
+Details and Deletion of User:
+output
+{
+    "message":"deleted"
+}
+output
+{
+     "details":[
+        {
+            "userid":"<user_id>"
+            "firstname":""
+            "lastname":""
+            "dob":
+            "address":[
+            {
+                "city":""
+            "state":
+            "pin code":
+            "country":""
+            }
+            ]
+            "Qualification":[
+            {
+                "Qualification Level":[
+                {
+                    "10th":""
+                    "12th":""
+                    "UG":""
+                    "PG":""
+                }]
+                "specialization":""
+                "name of Institute":""
+                "DOJ":""
+                "DOC":
+                "Type of Course":[{
+                "fulltime":""
+                "part time":""
+                }]
+            }
+            ]
+            "contact":""
+            "email":""
+        }
+    ]   
+}
+
+
+Details and Deletion of Job
+output
+{
+    "message":"deleted"
+}
+
+output
+{}

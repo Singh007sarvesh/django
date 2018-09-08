@@ -1,0 +1,149 @@
+
+1   Create Subreddit
+
+REQUEST:
+
+HTTP GET /subreddits/
+
+RESPONSE:
+
+{
+    "subreddit": [
+        {
+            "post": "this is my first page",
+            "posted_at": "2018-20-12",
+            "comments": 10
+            "like": 8
+            "share": 30
+            "id" :123
+            "name": Ashish
+            "save": 2
+        }
+    ],
+    "has_more": true
+}
+
+2 Add Post to a subreddit
+
+REQUEST:
+
+HTTP GET /subreddits/<programming>/
+
+RESPONSE:
+
+{
+    "post":[
+    {
+        "id": 3
+        "text": "abc"
+        "created_at": "2014-05-09"
+        "created_by": "abc"
+    }
+    ]
+}
+
+3 Add commment to a post
+
+REQUEST:
+
+HTTP GET /subreddits/<programming>/posts/<id>/comments/<id>
+
+RESPONSE:
+
+{
+    "comment":[
+    {
+        "id": 1
+        "text": "this is"
+        "commented_at" : "2015-08/09"
+        "likes": 20
+        "share": 20
+        "comments": 30
+    }
+]
+}
+
+4 Reply to comment
+
+REQUEST:
+
+HTTP GET /subreddits/<programming>/posts/<id>/comments/<id>
+
+RESPONSE:
+
+{
+    "reply":[
+    {
+        "comment_id": 1
+        "created_at": "2012-06-09"
+        "reply_id" :3
+    }
+    ]
+}
+
+5 Delete comment
+
+REQUEST:
+
+HTTP GET /subreddits<programming>/posts/<id>/comments/<id>
+
+RESPONSE:
+
+{
+    "delete";[
+    {
+        "id": 2
+        "text": "delete"
+        "deleted_at": "2018-04-05"
+    }
+]
+}
+
+6 Fetch all comments belonging to a post
+
+REQUEST:
+
+HTTP GET /subreddits/<programming>/posts/<id>/comments
+
+RESPONSE:
+
+{
+    "all_comments":[
+    {
+        "id": 1
+        "comment": "first"
+        "created_at": "2016-09-08"
+        "likes": 3
+        "reply_id": []
+    },
+    {
+            "id": 2
+            "created_at": "2018-01-02"
+    },
+],
+    "has_more": true
+}
+
+
+7 Fetch all posts belonging to a subreddit (with pagination)
+
+REQUEST:
+
+HTTP GET /subreddits/<programming>/?limit=25&offset=50
+
+RESPONSE:
+
+{
+    "posts":[
+    {
+        "id": 3
+        "urls": "http://subreddits/posts/"
+        "text": "the"
+        "created_at": "2013-09-07"
+        "comment": 10
+        "like":3
+
+    }
+],
+    "has_more": true
+}
