@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>First Page</title>
+    </head>
+    <body>
+      <ul>
+            {% for ques in question %}
+                <li>{{ques.question_text }}</li>
+                {% for ch in ques.choice_set.all %}
+                <li>{{ch.choice_text }} {{ch.votes}}</li>
+
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h1 style="margin-left:45%">Login</h1>
+        <form style="margin-left:45%;" method="POST" action="/login_users">
+             {% csrf_token %}
+             <input type="text" name="user_name" placeholder="Enter User Name" required="required" pattern="[a-zA-Z0-9]+"><br><br><br>
+             <input type="password" name="user_password" placeholder="Enter password" required="required"><br>
+             <br>
+             <input style="margin-left:130px;" type="submit" name="sub" value="Login"><br>
+        </form>
+    </body>
+</html>
